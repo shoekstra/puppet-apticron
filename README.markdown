@@ -82,3 +82,4 @@ The module has been tested on:
 
 Pull requests welcome.
 
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/0e64e10b06caf95c9900623996f00d60 "githalytics.com")](http://githalytics.com/shoekstra/puppet-apticron)
