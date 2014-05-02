@@ -72,7 +72,7 @@ The `apticron::cron` class removes the /etc/cron.d/apticron file, replacing it w
 
 ##Limitations
 
-This module has been built on and tested against Puppet 2.7 and higher.
+This module has been tested against Puppet 3.1 and higher.
 
 The module has been tested on:
 
