@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/shoekstra/puppet-apticron.svg?branch=develop)](https://travis-ci.org/shoekstra/puppet-apticron)
+
 ####Table of Contents
 
 1. [Overview](#overview)
