@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/shoekstra/puppet-apticron.svg?branch=develop)](https://travis-ci.org/shoekstra/puppet-apticron)
+[![Puppet Forge](http://img.shields.io/puppetforge/v/shoekstra/apticron.svg)](https://forge.puppetlabs.com/shoekstra/apticron)
 
 ####Table of Contents
 
