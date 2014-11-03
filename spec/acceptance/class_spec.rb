@@ -1,12 +1,12 @@
 require 'spec_helper_acceptance'
 
-describe 'apticron class' do
+describe 'apticron class', :if => "Debian".include?(fact('osfamily')) do
 
   context 'default parameters' do
     # Using puppet_apply as a helper
     it 'should work with no errors' do
       pp = <<-EOS
-      class { 'apticron': }
+      class { 'apticron': mail_to => 'sysadmin@example.com' }
       EOS
 
       # Run it twice and test for idempotency
@@ -16,11 +16,6 @@ describe 'apticron class' do
 
     describe package('apticron') do
       it { should be_installed }
-    end
-
-    describe service('apticron') do
-      it { should be_enabled }
-      it { should be_running }
     end
   end
 end

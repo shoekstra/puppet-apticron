@@ -1,0 +1,29 @@
+{
+  "name": "shoekstra-apticron",
+  "version": "0.1.1",
+  "author": "shoekstra",
+  "summary": "apticron puppet module",
+  "license": "Apache License, Version 2.0",
+  "source": "https://github.com/shoekstra/puppet-apticron",
+  "project_page": "https://github.com/shoekstra/puppet-apticron",
+  "issues_url": "https://github.com/shoekstra/puppet-apticron/issues",
+  "description": "Puppet module to install and configure Apticron, a simple script which sends daily emails about pending package updates on Debian based systems.",
+  "tags": [
+    "apt",
+    "apticron"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "12.04"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.0.0"
+    }
+  ]
+}
