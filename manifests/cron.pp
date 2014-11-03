@@ -5,11 +5,13 @@
 # === Examples
 #
 # class { '::apticron::cron':
+#   ensure => present,
 #   minute => 0,
 #   hour   => 1
 # }
 #
 class apticron::cron (
+    $ensure = present,
     $minute = 15,
     $hour = '*',
     $monthday = '*',
@@ -22,7 +24,7 @@ class apticron::cron (
   } ->
 
   cron { 'apticron':
-    ensure   => present,
+    ensure   => $ensure,
     minute   => $minute,
     hour     => $hour,
     monthday => $monthday,
