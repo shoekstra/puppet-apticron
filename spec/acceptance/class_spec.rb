@@ -4,18 +4,18 @@ describe 'apticron class', :if => "Debian".include?(fact('osfamily')) do
 
   context 'default parameters' do
     # Using puppet_apply as a helper
-    it 'should work with no errors' do
+    it 'should work idempotently with no errors' do
       pp = <<-EOS
       class { 'apticron': mail_to => 'sysadmin@example.com' }
       EOS
 
       # Run it twice and test for idempotency
-      expect(apply_manifest(pp).exit_code).to_not eq(1)
-      expect(apply_manifest(pp).exit_code).to eq(0)
+      apply_manifest(pp, :catch_failures => true)
+      apply_manifest(pp, :catch_changes  => true)
     end
 
     describe package('apticron') do
-      it { should be_installed }
+      it { is_expected.to be_installed }
     end
   end
 end
