@@ -43,20 +43,25 @@
 # class { '::apticron': mail_to => 'sysadmin@example.com' }
 #
 class apticron (
-    $mail_to,
-    $diff_only = false,
-    $notify_holds = true,
-    $notify_new = false,
-    $custom_subject = undef,
-    $mail_from = undef,
-) inherits apticron::params {
+  $ensure = present,
+  $cron_hour = '*',
+  $cron_minute = 15,
+  $cron_month = '*',
+  $cron_monthday = '*',
+  $cron_weekday = '*',
+  $custom_subject = undef,
+  $diff_only = false,
+  $mail_from = undef,
+  $mail_to = "root@${::fqdn}",
+  $notify_holds = true,
+  $notify_new = false,
+) inherits ::apticron::params {
 
   validate_bool($diff_only)
   validate_bool($notify_holds)
   validate_bool($notify_new)
 
-  class { 'apticron::install': } ->
-  class { 'apticron::config': } ~>
-  class { 'apticron::cron': } ~>
-  Class['apticron']
+  class { '::apticron::install': } ->
+  class { '::apticron::config': } ->
+  Class['::apticron']
 }
