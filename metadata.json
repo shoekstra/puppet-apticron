@@ -2,8 +2,8 @@
   "name": "shoekstra-apticron",
   "version": "0.1.1",
   "author": "shoekstra",
-  "summary": "apticron puppet module",
-  "license": "Apache License, Version 2.0",
+  "summary": "Puppet module for apticron",
+  "license": "Apache-2.0",
   "source": "https://github.com/shoekstra/puppet-apticron",
   "project_page": "https://github.com/shoekstra/puppet-apticron",
   "issues_url": "https://github.com/shoekstra/puppet-apticron/issues",
@@ -14,16 +14,24 @@
   ],
   "operatingsystem_support": [
     {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "12.04"
+        "12.04",
+        "14.04"
       ]
     }
   ],
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 3.0.0"
+      "version_requirement": ">= 2.4.0 <= 4.5.0"
     }
   ]
 }
